@@ -1,7 +1,7 @@
 body {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
+    font-weight: 400; 
     font-style: normal;
     margin: 0;
     padding: 0;
@@ -19,14 +19,14 @@ header {
 header h1 {
     font-family: "Playwrite GB S", cursive; 
     font-optical-sizing: auto;
-    font-weight: <weight>;
+    font-weight: 500; 
     font-style: normal;
 }
 
 header nav {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
+    font-weight: 400; 
     font-style: normal;
 }
 
@@ -83,11 +83,11 @@ nav ul li a {
 }
 
 footer {
-    background-color: #333;
+    background-color: #4CAF50;
     color: white;
     text-align: center;
     padding: 1em;
-    position:static;
+    position: static;
     bottom: 0;
     width: 97,5%;
 }
