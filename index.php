@@ -14,10 +14,10 @@
         <h1>Comparador de Precios</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="productos.html">Productos</a></li>
-                <li><a href="tiendas.html">Tiendas</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="productos.php">Productos</a></li>
+                <li><a href="tiendas.php">Tiendas</a></li>
+                <li><a href="contacto.php">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -26,10 +26,10 @@
         <section class="hero">
             <h2>Encuentra los mejores precios para tus productos favoritos</h2>
             <p>Compara precios entre diferentes tiendas y ahorra dinero en tus compras diarias.</p>
-            <form>
+            <form action="productos.php" method="get">
                 <section class="search">
-                <input type="text" id="searchTerm" placeholder="Buscar productos...">
-                <button onclick="searchProducts()">Buscar</button>
+                <input type="text" id="searchTerm" name="searchTerm" placeholder="Buscar productos...">
+                <button type="submit">Buscar</button>
                 </section>
             </form>
         </section>
