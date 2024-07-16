@@ -33,7 +33,6 @@ header nav {
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 nav ul li {
@@ -107,9 +106,6 @@ nav ul li a {
     color: #666;
 }
 
-
-
-
 /* Estilos adicionales */
 
 #loadingMessage, #noResultsMessage {
@@ -136,7 +132,6 @@ nav ul li a {
     background-color: #45a049;
 }
 
-
 /*  pie de página */
 
 footer {
@@ -146,5 +141,5 @@ footer {
     padding: 1em;
     position: static;
     bottom: 0;
-    width: 97,5%;
+    width: 97.5%;
 }

@@ -9,36 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    <?php
-// Iniciar conexión a la base de datos
-$servername = "localhost";
-$username = "root"; // Cambia según tu configuración
-$password = ""; // Cambia según tu configuración
-$dbname = "comparador_precios"; // Nombre de tu base de datos
-
-// Crear conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
-
-// Manejar búsqueda
-$searchTerm = isset($_GET['searchTerm']) ? $_GET['searchTerm'] : '';
-$productos = [];
-
-// Obtener productos de la base de datos
-$sql = "SELECT * FROM productos WHERE nombre LIKE '%$searchTerm%'";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $productos[] = $row;
-    }
-}
-$conn->close();
-?>
-
 </head>
 <body>
     <header>
@@ -62,16 +32,6 @@ $conn->close();
         </section>
 
         <section class="product-list" id="productList">
-            <!-- Lista de productos -->
-    <?php foreach ($productos as $producto): ?>
-    <div class="product" data-name="<?= $producto['nombre'] ?>">
-        <img src="<?= $producto['imagen'] ?>" alt="<?= $producto['nombre'] ?>">
-        <h2><?= $producto['nombre'] ?></h2>
-        <p>Precio: <?= $producto['precio'] ?></p>
-    </div>
-    <?php endforeach; ?>
-</section>
-
             <div class="product" data-name="Aceite Extra Virgen">
                 <img src="img/Productos/Aceitextravirgen.jpg" alt="Aceite Extra Virgen">
                 <h2>Aceite Extra Virgen</h2>
@@ -97,4 +57,3 @@ $conn->close();
     <script src="script.js"></script>
 </body>
 </html>
-
