@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Precios - Productos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Styles/stylesproductos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Comparador de Precios</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="tiendas.html">Tiendas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="search">
+            <form class="form" onsubmit="searchProducts(); return false;">
+                <button type="submit">
+                    <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
+                        <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+                <input class="input" placeholder="Buscar productos..." id="searchTerm" name="searchTerm" required="" type="text">
+                <button class="reset" type="reset">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </form>
+            <div id="loadingMessage" style="display: none;">Buscando...</div>
+            <div id="noResultsMessage" style="display: none;">No se encontraron productos.</div>
+        </section>
+        
+
+        <section class="product-list" id="productList">
+            <div class="product" data-name="Aceite Extra Virgen">
+                <img src="img/Productos/Aceitextravirgen.jpg" alt="Aceite Extra Virgen">
+                <h2>Aceite Extra Virgen</h2>
+                <p>Precio: $11,000</p>
+            </div>
+
+            <div class="product" data-name="Cepillo Ropa">
+                <img src="img/Productos/CepilloRopa.jpg" alt="Cepillo Ropa">
+                <h2>Cepillo Ropa</h2>
+                <p>Precio: $15,000</p>
+            </div>
+
+            <div class="product" data-name="Detergente">
+                <img src="img/Productos/Detergente.jpg" alt="Detergente">
+                <h2>Detergente</h2>
+                <p>Precio: $15,000</p>
+            </div>
+
+            <div class="product" data-name="Arroz Diana">
+                <img src="img/Productos/ArrozDiana.webp" alt="Arroz Diana">
+                <h2>Arroz Diana</h2>
+                <p>Precio: $15,000</p>
+            </div>
+
+            <div class="product" data-name="Sal">
+                <img src="img/Productos/Sal.webp" alt="Sal">
+                <h2>Sal</h2>
+                <p>Precio: $15,000</p>
+            </div>
+
+            <div class="product" data-name="Papel Higienico">
+                <img src="img/Productos/EliteDuo.jpeg" alt="Papel Higienico">
+                <h2>Papel Higienico Elite Duo</h2>
+                <p>Precio: $15,000</p>
+            </div>
+
+            <div class="product" data-name="Suavizante">
+                <img src="img/Productos/Suavizante.jpg" alt="Suavizante">
+                <h2>Suavizante de telas</h2>
+                <p>Precio: $15,000</p>
+            </div>
+
+            <div class="product" data-name="Ambientador">
+                <img src="img/Productos/Ambientador.webp" alt="Ambientador">
+                <h2>Pan Bimbo Artesanal</h2>
+                <p>Precio: $15,000</p>
+            </div>
+
+            <div class="product" data-name="blanqueador">
+                <img src="img/Productos/blanqueador.png" alt="blanqueador">
+                <h2>blanqueador king</h2>
+                <p>Precio: $15,000</p>
+            </div>
+
+            <div class="product" data-name="AceiteDiana">
+                <img src="img/Productos/AceiteDiana.png" alt="AceiteDiana">
+                <h2>Aceite Diana</h2>
+                <p>Precio: $15,000</p>
+            </div>
+
+            <!-- Añadir más productos aquí -->
+        </section>
+    </main>
+
+    <footer>
+        <p>Proyecto Sena, Nicolas Mutis</p>
+    </footer>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
