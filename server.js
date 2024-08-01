@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Configuración de la carpeta pública
-app.use(express.static(path.join(__dirname, 'pro/public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Ruta para obtener productos
 app.get('/api/products', (req, res) => {
@@ -77,6 +77,16 @@ app.post('/contact', (req, res) => {
         });
     });
 });
+
+// Importar rutas del API
+const productsRoutes = require('./api/products');
+const storesRoutes = require('./api/stores');
+const commentsRoutes = require('./api/comments');
+
+// Usar rutas del API
+app.use('/api/products', productsRoutes);
+app.use('/api/stores', storesRoutes);
+app.use('/api/comments', commentsRoutes);
 
 // Iniciar el servidor
 app.listen(port, () => {
