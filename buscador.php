@@ -59,7 +59,7 @@
 			</div>
 			<div class="panel-body">
 			<i>Publicado el <?php echo date('jS M Y H:i:s', strtotime($row['post_date'])); ?></i> por <?php echo $row['auther']; ?> en 
-			<a href="viewbycat.php?cat=<?php echo $row['catinfo']; ?>"><?php echo $row['catinfo']; ?></a>
+			<a href="buscador.php?cat=<?php echo $row['catinfo']; ?>"><?php echo $row['catinfo']; ?></a>
 				<br><br>
 			    <p><?php echo $row['description']; ?></p>
 			    </div>               

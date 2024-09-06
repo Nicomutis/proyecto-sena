@@ -47,14 +47,14 @@
 				<br>
 				<label for="content">Seleccionar Categoría del Post</label><br> 
 				<select class="form-control" name="cats">
-    				<option name="Uncategorised" value="Uncategorised">Sin Categoría</option> 
-				   	<option name="Technology" value="Technology">Tecnología</option> 
-				  	<option name="Lifestyle" value="Lifestyle">Estilo de Vida</option> 
-				   	<option name="News" value="News">Noticias</option> 
-				   	<option name="Education" value="Education">Educación</option> 
-				   	<option name="Nature" value="Nature">Naturaleza</option> 
-				   	<option name="Health" value="Health">Salud</option> 
-				   	<option name="Programming" value="Programming">Programación</option> 
+    				<option name="Sin Categoría" value="Sin Categoría">Sin Categoría</option> 
+				   	<option name="Tecnología" value="Tecnología">Tecnología</option> 
+				  	<option name="Estilo de Vida" value="Estilo de Vida">Estilo de Vida</option> 
+				   	<option name="Noticias" value="Noticias">Noticias</option> 
+				   	<option name="Educación" value="Educación">Educación</option> 
+				   	<option name="Naturaleza" value="Naturaleza">Naturaleza</option> 
+				   	<option name="Salud" value="Salud">Salud</option> 
+				   	<option name="Programación" value="Programación">Programación</option> 
   				</select>
 			</div>
 			<div class="col-lg-8">

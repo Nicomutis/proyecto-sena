@@ -63,7 +63,7 @@
 											Asistencia por Sesión 
 										</div>
 										<div class="panel-body">
-											<p><i>¡Seleccione la Fecha de la Sesión desde el Lado Izquierdo para Ver la Asistencia de esa Sesión en Particular!</i></p> 
+											<p><i>Elige la fecha de la sesión desde el lado izquierdo para ver la asistencia de esa sesión específica.</i></p> 
 										</div>
 									</div>
 								</div>

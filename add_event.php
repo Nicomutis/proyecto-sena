@@ -28,7 +28,7 @@
 	<div class="row">
 		<ol class="breadcrumb">
 			<li><a href="home.php"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-			<li><a href="schedule.php">Horario y Sesiones</a></li> 
+			<li><a href="cronograma.php">Horario y Sesiones</a></li> 
 			<li class="active">Agregar Nuevas Sesiones</li> 
 		</ol>
 	</div><!--/.row-->
@@ -54,7 +54,7 @@
 				<div id="dtBox"></div><br>
 				<button class="btn btn-primary" name="add_event" type="submit">Agregar</button> 
 				&nbsp;&nbsp;
-				<a type="button" class="btn btn-default" href="schedule.php" class="btn btn-default">Cancelar</a> 
+				<a type="button" class="btn btn-default" href="cronograma.php" class="btn btn-default">Cancelar</a> 
 			</form>
 		</div>
 	</div><!--/.row-->

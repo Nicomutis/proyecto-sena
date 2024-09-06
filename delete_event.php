@@ -30,7 +30,7 @@
 	<div class="row">
 		<ol class="breadcrumb">
 			<li><a href="home.php"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-			<li><a href="schedule.php">Calendario y Sesiones</a></li> 
+			<li><a href="cronograma.php">Calendario y Sesiones</a></li> 
 			<li class="active">Eliminar Sesión</li> 
 		</ol>
 	</div><!--/.row-->
@@ -58,7 +58,7 @@
 							<div class="pull-right">
 								<button class="btn btn-danger" name="yes" type="submit" id="login">Sí</button> 
 								&nbsp;&nbsp;
-								<a href="schedule.php" class="btn btn-default" id="login">No, volver</a> 
+								<a href="cronograma.php" class="btn btn-default" id="login">No, volver</a> 
 							</div>
 						</div>
 					</form>

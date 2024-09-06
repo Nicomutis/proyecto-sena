@@ -30,7 +30,7 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="home.php"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-				<li><a href="schedule.php">Calendario y sesiones</a></li> 
+				<li><a href="cronograma.php">Calendario y sesiones</a></li> 
 				<li class="active">Editar Sesión</li> 
 			</ol>
 		</div><!--/.row-->

@@ -23,13 +23,13 @@
 	<div class="row">
 		<ol class="breadcrumb">
 			<li><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-			<li class="active">Tablero</li> 
+			<li class="active">Dashboard</li> 
 		</ol>
 	</div><!--/.row-->
 
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">Tablero</h1> 
+			<h1 class="page-header">Dashboard</h1> 
 		</div>
 	</div><!--/.row-->
 
@@ -42,7 +42,7 @@
 					</div>
 					<div class="col-sm-9 col-lg-7 widget-right">
 						<div class="large"><?php echo $total_members; ?></div>
-						<div class="text-muted">Miembros Totales</div> 
+						<div class="text-muted">Miembros</div> 
 					</div>
 				</div>
 			</div>
@@ -61,7 +61,7 @@
 			</div>
 		</div>
 
-		<a href="schedule.php">
+		<a href="cronograma.php">
 		<div class="col-xs-12 col-md-6 col-lg-3">
 			<div class="panel panel-teal panel-widget">
 				<div class="row no-padding">
@@ -70,7 +70,7 @@
 					</div>
 					<div class="col-sm-9 col-lg-7 widget-right">
 						<div class="large"><?php echo $total_sessions; ?></div>
-						<div class="text-muted">Sesiones Totales</div> 
+						<div class="text-muted">Sesiones</div> 
 					</div>
 				</div>
 			</div>
@@ -86,7 +86,7 @@
 					</div>
 					<div class="col-sm-9 col-lg-7 widget-right">
 						<div class="large"><?php echo $all_posts; ?></div>
-						<div class="text-muted">Publicaciones del Blog</div> 
+						<div class="text-muted">Publicaciones</div> 
 					</div>
 				</div>
 			</div>

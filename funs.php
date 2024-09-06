@@ -32,12 +32,12 @@ function login()
 				mysqli_query($con,$query);
 			}
 
-			echo '<div class="text-center alert bg-success col-md-offset-4 col-md-4" role="alert"><span>Welcome back, <b>'.$_SESSION['username'].'</b>!</span></div>';
+			echo '<div class="text-center alert bg-success col-md-offset-4 col-md-4" role="alert"><span>Bienvenido de vuelta, <b>'.$_SESSION['username'].'</b>!</span></div>';
 			echo '<script>setTimeout(function () { window.location.href = "home.php";}, 1000);</script>';
 		}
 		else
 		{
-			echo '<div class="text-center alert bg-danger col-md-offset-4 col-md-4" role="alert"><span>Sorry <b>'.$username.'</b>, Try Again!</span></div>';
+			echo '<div class="text-center alert bg-danger col-md-offset-4 col-md-4" role="alert"><span>Error <b>'.$username.'</b>, Intentalo de nuevo!</span></div>';
 		}	
 	}
 
@@ -143,18 +143,18 @@ function update_settings($id)
 				$rows = mysqli_affected_rows($con);
 				if($rows == 1)
 				{
-					echo '<div class="text-center alert bg-success col-md-offset-4 col-md-4"><span>Details updated!</span></div>';
+					echo '<div class="text-center alert bg-success col-md-offset-4 col-md-4"><span>Datos actualizados!</span></div>';
 					echo '<script>setTimeout(function () { window.location.href = "home.php";}, 1000);</script>';
 				}
 				else
 				{
-					echo '<div class="text-center alert bg-danger col-md-offset-4 col-md-4"><span>problem while updating name and password</span></div>';
+					echo '<div class="text-center alert bg-danger col-md-offset-4 col-md-4"><span>Problema al actualizar el nombre y la contraseña.</span></div>';
 					
 				}
 			}
 			else
 			{
-				echo '<div class="text-center alert bg-danger col-md-offset-4 col-md-4"><span>check your old password and try again</span></div>';
+				echo '<div class="text-center alert bg-danger col-md-offset-4 col-md-4"><span>Verifica tu contraseña anterior e inténtalo de nuevo.</span></div>';
 			}
 			
 		}
@@ -165,13 +165,13 @@ function update_settings($id)
 			$rows = mysqli_affected_rows($con);
 			if($rows == 1)
 			{
-				echo '<div class="text-center alert bg-success col-md-offset-4 col-md-4"><span>Details updated!</span></div>';
+				echo '<div class="text-center alert bg-success col-md-offset-4 col-md-4"><span>Datos actualizados</span></div>';
 				echo '<script>setTimeout(function () { window.location.href = "home.php";}, 1000);</script>';
 
 			}
 			else
 			{
-				echo '<div class="text-center alert bg-danger col-md-offset-4 col-md-4"><span>problem while updating details</span></div>';
+				echo '<div class="text-center alert bg-danger col-md-offset-4 col-md-4"><span>Problema al actualizar los datos.</span></div>';
 				
 			}
 		}
@@ -276,12 +276,12 @@ function all_member_table($role)
 	<table class="table table-hover table-responsive">
 			<tr class="alert-info">
 				<th><h4>Id</h4></th>
-				<th><h4>Name</h4></th>
-				<th><h4>Username</h4></th>
+				<th><h4>Nombre</h4></th>
+				<th><h4>Nombre de usuario</h4></th>
 				<th><h4>DOB</h4></th>
 				<th><h4>Email</h4></th>
-				<th><h4>Role</h4></th>
-				<th><h4>Action</h4></th>
+				<th><h4>Rol</h4></th>
+				<th><h4>Acciones</h4></th>
 			</tr>
 	<?php
 	while ($row = mysqli_fetch_assoc($result))
@@ -306,7 +306,7 @@ function all_member_table($role)
 				
 				if($role == "President")
 				{
-					echo '<a href="edit_member.php?mem_id='.$row['id'].'">Edit</a> | <a href="delete_member.php?mem_id='.$row['id'].'">Remove</a>';
+					echo '<a href="edit_member.php?mem_id='.$row['id'].'">Editar</a> | <a href="delete_member.php?mem_id='.$row['id'].'">Remover</a>';
 				}
 				else
 				{
@@ -355,12 +355,12 @@ function add_member($role)
 		$rows = mysqli_affected_rows($con);
 		if($rows == 1)
 		{
-			echo '<div class="text-center alert alert-success col-md-offset-4 col-md-4"><p><b>Success! Member Added</b></p></div>';
-			echo '<script>setTimeout(function () { window.location.href = "manage_members.php";}, 1000);</script>';
+			echo '<div class="text-center alert alert-success col-md-offset-4 col-md-4"><p><b>¡Éxito! Miembro agregado.</b></p></div>';
+			echo '<script>setTimeout(function () { window.location.href = "gestion_miembros.php";}, 1000);</script>';
 		}
 		else
 		{
-			echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b>error while adding member, try again</b></p></div>';
+			echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b>Error al agregar al miembro. Inténtalo de nuevo.</b></p></div>';
 		}
 	}
 
@@ -408,12 +408,12 @@ function edit_member($role,$mem_id)
 		$rows = mysqli_affected_rows($con);
 		if($rows == 1)
 		{
-			echo '<div class="text-center alert alert-success col-md-offset-4 col-md-4"><p><b>Success! info updated</b></p></div>';
-			echo '<script>setTimeout(function () { window.location.href = "manage_members.php";}, 1000);</script>';
+			echo '<div class="text-center alert alert-success col-md-offset-4 col-md-4"><p><b>¡Éxito! Información actualizada.</b></p></div>';
+			echo '<script>setTimeout(function () { window.location.href = "gestion_miembros.php";}, 1000);</script>';
 		}
 		else
 		{
-			echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b>error while updating info, try again</b></p></div>';
+			echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b>Error al actualizar la información. Inténtalo de nuevo.</b></p></div>';
 		}
 	}
 
@@ -438,12 +438,12 @@ function delete_member($mem_id,$role)
 		echo mysqli_error($con);
 		if($rows == 1)
 		{
-			echo '<div class="text-center alert alert-success col-md-offset-4 col-md-4"><p><b>Success! Member removed</b></p></div>';
-			echo '<script>setTimeout(function () { window.location.href = "manage_members.php";}, 1000);</script>';
+			echo '<div class="text-center alert alert-success col-md-offset-4 col-md-4"><p><b>¡Éxito! Miembro eliminado.</b></p></div>';
+			echo '<script>setTimeout(function () { window.location.href = "gestion_miembros.php";}, 1000);</script>';
 		}
 		else
 		{
-			echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b>error while removing member, try again</b></p></div>';
+			echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b>Error al eliminar al miembro. Inténtalo de nuevo.</b></p></div>';
 		}
 	}
 	
@@ -473,7 +473,7 @@ function forgot()
 			{
 				// Pear Mail Library
 				require_once "Mail.php";
-				$from = '<shindesharad71@gmail.com>';
+				$from = '<aguilaniko01@gmail.com>';
 				$subject = 'Club - Password Reset Code';
 				$body = "Code is: ".$otp;
 				$headers = array(
@@ -485,7 +485,7 @@ function forgot()
 				        'host' => 'ssl://smtp.gmail.com',
 				        'port' => '465',
 				        'auth' => true,
-				        'username' => 'shindesharad71@gmail.com',
+				        'username' => 'aguilaniko01@gmail.com',
 				        'password' => 'password'
 				    ));
 				$mail = $smtp->send($to, $headers, $body);
@@ -495,18 +495,18 @@ function forgot()
 				} 
 				else 
 				{
-				    echo('<div class="text-center alert alert-success col-md-offset-4 col-md-4"><p><b>Password reset code sent to '.$email.' check your mailbox</b></p></div>');
+				    echo('<div class="text-center alert alert-success col-md-offset-4 col-md-4"><p><b>Código de restablecimiento de contraseña enviado a '.$email.' Revisa tu bandeja de entrada.</b></p></div>');
 				}
 			}
 			else
 			{
-				echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b>error in generating opt</b></p></div>';
+				echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b>Error al generar el código de verificación.</b></p></div>';
 			}
 		
 		}
 		else
 		{
-			echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b>invalid email! try again</b></p></div>';
+			echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b>¡Correo electrónico inválido! Inténtalo de nuevo.</b></p></div>';
 		}
 	
 	}
@@ -527,7 +527,7 @@ function show_events($role)
 
 	if($rows == 0)
 	{
-		echo '<div class="text-center alert alert-info col-md-offset-4 col-md-4"><p><b>no events scheduled yet!</b></p></div>';
+		echo '<div class="text-center alert alert-info col-md-offset-4 col-md-4"><p><b>¡Aún no hay eventos programados!</b></p></div>';
 	}
 	
 	while($row = mysqli_fetch_assoc($result))
@@ -554,7 +554,7 @@ function show_events($role)
 					<?php
 						if($role == 'President')
 		        		{
-		        			echo '<div class="panel-footer"><a class="btn btn-primary btn-sm" href="edit_event.php?event_id='.$row['session_id'].'">Edit</a> <a class="btn btn-danger btn-sm pull-right" href="delete_event.php?event_id='.$row['session_id'].'">Delete</a></div>';
+		        			echo '<div class="panel-footer"><a class="btn btn-primary btn-sm" href="edit_event.php?event_id='.$row['session_id'].'">Edit</a> <a class="btn btn-danger btn-sm pull-right" href="delete_event.php?event_id='.$row['session_id'].'">Eliminar</a></div>';
 		        		}
 					?>
 			</div>
@@ -581,17 +581,17 @@ function all_events_table($role)
 		$rows = mysqli_affected_rows($con);
 		if($rows == 0)
 		{
-			echo '<div class="col-md-offset-3 col-md-5 alert alert-warning text-center"><b>no event scheduled, schedule event first!</b></div>';
+			echo '<div class="col-md-offset-3 col-md-5 alert alert-warning text-center"><b>No hay eventos programados. ¡Programa un evento primero!</b></div>';
 			exit();
 		}
 		?>
 		<table class="table manage-member-panel table-hover table-responsive">
 				<tr class="alert-info">
 					<th><h4>Id</h4></th>
-					<th><h4>Event Title</h4></th>
-					<th><h4>Description</h4></th>
-					<th><h4>Date</h4></th>
-					<th><h4>Action</h4></th>
+					<th><h4>Evento</h4></th>
+					<th><h4>Descripcion</h4></th>
+					<th><h4>Fecha</h4></th>
+					<th><h4>Acciones</h4></th>
 				</tr>
 		<?php
 		while ($row = mysqli_fetch_assoc($result))
@@ -601,8 +601,8 @@ function all_events_table($role)
 					<td>'.$row['session_name'].'</td>
 					<td>'.$row['session_details'].'</td>
 					<td>'.$row['session_date'].'</td>
-					<td><a href="edit_event.php?event_id='.$row['session_id'].'">Edit</a>';
-					echo ' | <a href="delete_event.php?event_id='.$row['session_id'].'">Remove</a></td></tr>';
+					<td><a href="edit_event.php?event_id='.$row['session_id'].'">Editar</a>';
+					echo ' | <a href="delete_event.php?event_id='.$row['session_id'].'">Eliminar</a></td></tr>';
 			}
 		echo '</table>';
 		}
@@ -629,12 +629,12 @@ function add_event()
 		$rows = mysqli_affected_rows($con);
 		if($rows == 1)
 		{
-			echo '<div class="text-center alert alert-success col-md-offset-4 col-md-4"><p><b>Success! event Added</b></p></div>';
-			echo '<script>setTimeout(function () { window.location.href = "schedule.php";}, 1000);</script>';
+			echo '<div class="text-center alert alert-success col-md-offset-4 col-md-4"><p><b>¡Hecho! Evento agregado.</b></p></div>';
+			echo '<script>setTimeout(function () { window.location.href = "cronograma.php";}, 1000);</script>';
 		}
 		else
 		{
-			echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b>error while adding event, try again</b></p></div>';
+			echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b>Error al agregar el evento. Inténtalo de nuevo.</b></p></div>';
 		}
 	}
 
@@ -659,12 +659,12 @@ function delete_event($event_id,$role)
 		echo mysqli_error($con);
 		if($rows == 1)
 		{
-			echo '<div class="text-center alert alert-success col-md-offset-4 col-md-4"><p><b>Success! Event removed</b></p></div>';
-			echo '<script>setTimeout(function () { window.location.href = "schedule.php";}, 1000);</script>';
+			echo '<div class="text-center alert alert-success col-md-offset-4 col-md-4"><p><b> Hecho! Evento eliminado </b></p></div>';
+			echo '<script>setTimeout(function () { window.location.href = "cronograma.php";}, 1000);</script>';
 		}
 		else
 		{
-			echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b>error while removing session, try again</b></p></div>';
+			echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b> Error al eliminar la sesión. Inténtalo de nuevo. </b></p></div>';
 		}
 	}
 	
@@ -694,12 +694,12 @@ function edit_event($event_id,$role)
 		$rows = mysqli_affected_rows($con);
 		if($rows == 1)
 		{
-			echo '<div class="text-center alert alert-success col-md-offset-4 col-md-4"><p><b>Success! info updated</b></p></div>';
-			echo '<script>setTimeout(function () { window.location.href = "schedule.php";}, 1000);</script>';
+			echo '<div class="text-center alert alert-success col-md-offset-4 col-md-4"><p><b> ¡Hecho! informacion actualizada </b></p></div>';
+			echo '<script>setTimeout(function () { window.location.href = "cronograma.php";}, 1000);</script>';
 		}
 		else
 		{
-			echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b>error while updating info, try again</b></p></div>';
+			echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b> Hubo un error al actualizar la informacion, intenta de nuevo </b></p></div>';
 		}
 	}
 
@@ -731,7 +731,7 @@ function attendance($session_id,$role)
 		<div class="row">
 			<div class="col-md-5">
 				<table class="table table-responsive">
-				<tr class="success"><th>ID</th><th>Present Members Name</th></tr>
+				<tr class="success"><th>ID</th><th> Miembros presentes </th></tr>
 		<?php
 
 		// Present Code from here
@@ -745,7 +745,7 @@ function attendance($session_id,$role)
 				$rows = mysqli_affected_rows($con);
 				if($rows == 0)
 				{
-					echo '<tr class="success"><td>no one is present, error!</td>';
+					echo '<tr class="success"><td> ¡Nadie está presente, Que mal! </td>';
 				}
 				while ($row = mysqli_fetch_assoc($result))
 				{
@@ -758,7 +758,7 @@ function attendance($session_id,$role)
 				</div>
 				<div class="col-md-5">
 					<table class="table table-responsive">
-						<tr class="danger"><th>ID</th><th>Absent Members Name</th></tr>
+						<tr class="danger"><th>ID</th><th> Miembros ausentes </th></tr>
 					
 						<?php
 						// Absent Code from here
@@ -782,7 +782,7 @@ function attendance($session_id,$role)
 
 							if($rows == 0)
 							{
-								echo '<tr class="danger"><td>everyone is present, nice guys!</td>';
+								echo '<tr class="danger"><td> ¡Todos están presentes, bien hecho, chicos! </td>';
 							}
 
 							while ($row = mysqli_fetch_assoc($result))
@@ -802,11 +802,11 @@ function attendance($session_id,$role)
 	{
 		if($role == "President" || $role == "Technical")
 		{
-			echo '<br><div class="text-center"><a href="manage_attendance.php?key='.$key.'" class="btn btn-primary">Fill Attendance for this Session</a></div>';
+			echo '<br><div class="text-center"><a href="gestion_asistencia.php?key='.$key.'" class="btn btn-primary">Rellena la asistencia para esta sesión.</a></div>';
 		}
 		else
 		{
-			echo '<div class="text-center alert alert-info col-md-offset-4 col-md-4"><p><b>Attendance is not updated for this session, Please contanct your Technical Head or President for attendance!</b></p></div>';
+			echo '<div class="text-center alert alert-info col-md-offset-4 col-md-4"><p><b>La asistencia no se ha actualizado para esta sesión. ¡Por favor, contacta a tu responsable técnico o al presidente para resolver el problema!</b></p></div>';
 		}
 		
 	}
@@ -830,8 +830,8 @@ function do_attendance($key)
 		$rows = mysqli_affected_rows($con);
 		if($rows == 1)
 		{
-			echo '<div class="text-center alert alert-warning col-md-offset-4 col-md-4"><p><b>Attendance Already added!</b></p></div>';
-			echo '<script>setTimeout(function () { window.location.href = "attendance.php";}, 1000);</script>';
+			echo '<div class="text-center alert alert-warning col-md-offset-4 col-md-4"><p><b>¡La asistencia ya está registrada!</b></p></div>';
+			echo '<script>setTimeout(function () { window.location.href = "asistencia.php";}, 1000);</script>';
 			exit();
 		}
 		
@@ -844,12 +844,12 @@ function do_attendance($key)
 
 		if($rows == 1)
 		{
-			echo '<div class="text-center alert alert-success col-md-offset-4 col-md-4"><p><b>Success! Attendance updated!</b></p></div>';
-			echo '<script>setTimeout(function () { window.location.href = "attendance.php";}, 1000);</script>';
+			echo '<div class="text-center alert alert-success col-md-offset-4 col-md-4"><p><b> ¡Éxito! ¡Asistencia actualizada! </b></p></div>';
+			echo '<script>setTimeout(function () { window.location.href = "asistencia.php";}, 1000);</script>';
 		}
 		else
 		{
-			echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b>error while updating attendance, try again</b></p></div>';
+			echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b>Error al actualizar la asistencia. Inténtalo de nuevo.</b></p></div>';
 		}
 
 	}
@@ -869,7 +869,7 @@ function show_notice($role)
 
 	if($rows == 0)
 	{
-		echo '<div class="text-center alert alert-info col-md-offset-4 col-md-4"><p><b>no notice posted yet!</b></p></div>';
+		echo '<div class="text-center alert alert-info col-md-offset-4 col-md-4"><p><b> No hay noticias aun!</b></p></div>';
 		exit();
 	}
 	
@@ -898,7 +898,7 @@ function show_notice($role)
 				<?php
 					if($role == 'President')
 	        		{
-	        			echo '<div class="panel-footer"><a class="btn btn-primary btn-sm" href="edit_notice.php?notice_id='.$row['notice_id'].'">Edit</a> <a class="btn btn-danger btn-sm pull-right" href="delete_notice.php?notice_id='.$row['notice_id'].'">Delete</a></div>';
+	        			echo '<div class="panel-footer"><a class="btn btn-primary btn-sm" href="edit_notice.php?notice_id='.$row['notice_id'].'">Edit</a> <a class="btn btn-danger btn-sm pull-right" href="delete_notice.php?notice_id='.$row['notice_id'].'">Eliminar</a></div>';
 	        		}
 				?>
 			</div>
@@ -930,12 +930,12 @@ function add_notice()
 		$rows = mysqli_affected_rows($con);
 		if($rows == 1)
 		{
-			echo '<div class="text-center alert alert-success bg-success col-md-offset-4 col-md-4" role="alert" style="color: #fff;"></b>Success! Notice Added</b></div>';
+			echo '<div class="text-center alert alert-success bg-success col-md-offset-4 col-md-4" role="alert" style="color: #fff;"></b> Hecho! Noticia agregada </b></div>';
 			echo '<script>setTimeout(function () { window.location.href = "notice.php";}, 1000);</script>';
 		}
 		else
 		{
-			echo '<div class="text-center alert alert-success bg-success col-md-offset-4 col-md-4" role="alert" style="color: #fff;"><b>error while adding notice</b></div>';
+			echo '<div class="text-center alert alert-success bg-success col-md-offset-4 col-md-4" role="alert" style="color: #fff;"><b> Error al publicar la noticia </b></div>';
 		}
 	}
 
@@ -960,12 +960,12 @@ function delete_notice($notice_id,$role)
 		echo mysqli_error($con);
 		if($rows == 1)
 		{
-			echo '<div class="text-center alert alert-success col-md-offset-4 col-md-4"><p><b>Success! Notice removed</b></p></div>';
+			echo '<div class="text-center alert alert-success col-md-offset-4 col-md-4"><p><b> Hecho! Noticia eliminada </b></p></div>';
 			echo '<script>setTimeout(function () { window.location.href = "notice.php";}, 1000);</script>';
 		}
 		else
 		{
-			echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b>error while removing notice, try again</b></p></div>';
+			echo '<div class="text-center alert alert-danger col-md-offset-4 col-md-4"><p><b> Hubo un error, Intentalo de nuevo </b></p></div>';
 		}
 	}
 	
@@ -994,12 +994,12 @@ function edit_notice($notice_id,$role)
 		$rows = mysqli_affected_rows($con);
 		if($rows == 1)
 		{
-			echo '<div class="text-center alert alert-success bg-success col-md-offset-4 col-md-4" role="alert" style="color: #fff;"></b>Success! Notice Edited</b></div>';
+			echo '<div class="text-center alert alert-success bg-success col-md-offset-4 col-md-4" role="alert" style="color: #fff;"></b> Hecho! Noticia editada </b></div>';
 			echo '<script>setTimeout(function () { window.location.href = "notice.php";}, 1000);</script>';
 		}
 		else
 		{
-			echo '<div class="text-center alert alert-danger bg-danger col-md-offset-4 col-md-4" role="alert" style="color: #fff;"></b>error while editing notice</b></div>';
+			echo '<div class="text-center alert alert-danger bg-danger col-md-offset-4 col-md-4" role="alert" style="color: #fff;"></b> Error al editar la noticia </b></div>';
 		}
 	}
 
@@ -1038,15 +1038,15 @@ function starter($id,$name,$role,$pic,$last_login,$total_members,$core_members,$
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<b><a class="navbar-brand" href="home.php"><span>Club</span>Manager</a></b>
+				<b><a class="navbar-brand" href="home.php"><span>Sync</span>Circle</a></b>
 				<ul class="user-menu">
 					<li class="dropdown pull-right">
 						<a class="dropdown-toggle" data-toggle="dropdown"><img src="<?php echo $pic; ?>" class="img-responsive img-circle img-thumbnail" height="35px" width="35px"> <b id="mobhide"><?php echo $name; ?></b> <div class="btn btn-xs btn-info" id="mobhide"><?php echo $role; ?></div><span class="caret"></span></a>
 
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="update_pic.php"><i class="fa fa-user" aria-hidden="true"></i> Change Profile Pic</a></li>
-							<li><a href="user_settings.php?user_id=<?php echo $id; ?>"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
-							<li><a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+							<li><a href="update_pic.php"><i class="fa fa-user" aria-hidden="true"></i> Cambiar la imagen de tu perfil </a></li>
+							<li><a href="user_settings.php?user_id=<?php echo $id; ?>"><i class="fa fa-cog" aria-hidden="true"></i> Configuracion </a></li>
+							<li><a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout </a></li>
 						</ul>
 					</li>
 				</ul>
@@ -1065,21 +1065,21 @@ function starter($id,$name,$role,$pic,$last_login,$total_members,$core_members,$
 
 			<li><a href="blog-home.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <b>Blog</b></a></li>
 
-			<li><a href="notice.php"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> <b>Club Notice</b></a></li>
+			<li><a href="notice.php"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> <b>Noticias</b></a></li>
 
-			<li><a href="attendance.php"><i class="fa fa-line-chart" aria-hidden="true"></i> <b>Attendance</b></a></li>
+			<li><a href="asistencia.php"><i class="fa fa-line-chart" aria-hidden="true"></i> <b>Eventos / Sesiones</b></a></li>
 
 			<?php if($role == 'President'){
-				echo '<li><a href="manage_members.php"><i class="fa fa-users" aria-hidden="true"></i> <b>Members</b></a></li>';
+				echo '<li><a href="gestion_miembros.php"><i class="fa fa-users" aria-hidden="true"></i> <b>Members</b></a></li>';
 			} ?>
 			
-			<li><a href="schedule.php"><i class="fa fa-calendar" aria-hidden="true"></i> <b>Sessions</b></a></li>
+			<li><a href="cronograma.php"><i class="fa fa-calendar" aria-hidden="true"></i> <b>Sesiones</b></a></li>
 
 			<li role="presentation" class="divider"></li>
 			<li><a style="color: #000;"><i class="fa fa-clock-o" aria-hidden="true"></i> <b>last login</b><br><?php echo $last_login; ?></a></li>
 			<li role="presentation" class="divider"></li>
 		</ul>
-		<div class="text-center" style="margin-top: 95px; color: #000;"><b>Made with <i style="color: red;">&#10084;</i> By <a href="http://sharadshinde.in" target="blank">Sharz</a> 2016</b></div>
+		<div class="text-center" style="margin-top: 95px; color: #000;"><b>Hecho con <i style="color: red;">&#10084;</i> Por <a href="https://github.com/Nicomutis/proyecto-sena" target="blank">Nicolas Mutis</a> 2024</b></div>
 	</div><!--/.sidebar-->
 	
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
@@ -1164,8 +1164,8 @@ function show_posts($role,$session_name)
 			<?php echo $row['postTitle']; ?>
 			</div>
 			<div class="panel-body">
-			<p>Posted by <b><?php echo $row['auther']; ?></b> on <b><?php echo date('jS M Y H:i:s', strtotime($row['post_date'])); ?></b> in 
-			<a href="viewbycat.php?cat=<?php echo $row['catinfo']; ?>"><?php echo $row['catinfo']; ?></a>
+			<p>Post por <b><?php echo $row['auther']; ?></b> el <b><?php echo date('jS M Y H:i:s', strtotime($row['post_date'])); ?></b> en
+			<a href="buscador.php?cat=<?php echo $row['catinfo']; ?>"><?php echo $row['catinfo']; ?></a>
 				<br><br>
 			    <p><?php echo $row['description']; ?></p>
 			    </div>               
@@ -1173,11 +1173,11 @@ function show_posts($role,$session_name)
 			    <?php
 			    	if($session_name == $row['auther'] || $role == 'President')
 			    	{?>
-			    		<a class="btn btn-warning" href="edit-post.php?id=<?php echo $row['id']; ?>&title=<?php echo $row['postTitle']; ?>">Edit</a>
-			    		<a class="btn btn-danger" href="delete-post.php?id=<?php echo $row['id']; ?>&title=<?php echo $row['postTitle']; ?>">Delete</a> 
+			    		<a class="btn btn-warning" href="edit-post.php?id=<?php echo $row['id']; ?>&title=<?php echo $row['postTitle']; ?>">Editar</a>
+			    		<a class="btn btn-danger" href="delete-post.php?id=<?php echo $row['id']; ?>&title=<?php echo $row['postTitle']; ?>">Eliminar</a> 
 			    	<?php }
 			   	?>
-			    <a class="btn btn-primary" href="viewpost.php?id=<?php echo $row['id']; ?>&title=<?php echo $row['postTitle']; ?>">Read More</a>      
+			    <a class="btn btn-primary" href="viewpost.php?id=<?php echo $row['id']; ?>&title=<?php echo $row['postTitle']; ?>">Leer mas</a>      
 			    </div></div></div>
 			    <?php
 			    $select++;
@@ -1186,7 +1186,7 @@ function show_posts($role,$session_name)
 	} // Post list if closed.
 	else
 	{
-		echo '<div class="alert bg-warning text-center col-md-offset-4 col-md-4 col-sm-12"><span><h4>no posts found, visit after sometime!</h4></span></div>';
+		echo '<div class="alert bg-warning text-center col-md-offset-4 col-md-4 col-sm-12"><span><h4> No se hallaron publicaciones, visitanos mas tarde!</h4></span></div>';
 	}
 	return false;
 }
@@ -1222,12 +1222,12 @@ function new_post()
 
 		if($rows == 1)
 		{
-			echo '<div class="text-center alert bg-success col-md-offset-4 col-md-4" role="alert"><span>Success! Post Published</span></div>';
+			echo '<div class="text-center alert bg-success col-md-offset-4 col-md-4" role="alert"><span>Hecho! Post Publicado </span></div>';
 			echo '<script>setTimeout(function () { window.location.href = "blog-home.php";}, 1000);</script>';
 		}
 		else
 		{
-			echo '<div class="text-center alert bg-danger col-md-offset-4 col-md-4" role="alert"><span>Sorry, error while publishing post, try again</span></div>';	
+			echo '<div class="text-center alert bg-danger col-md-offset-4 col-md-4" role="alert"><span>Lo siento, error al publicar el post, intenta de nuevo</span></div>';	
 		}
 
 	}
@@ -1263,12 +1263,12 @@ function edit_post($post_id)
 
 			if($rows == 1)
 			{
-				echo '<div class="text-center alert bg-success col-md-offset-4 col-md-4" role="alert"><span>Success! Post Updated</span></div>';
+				echo '<div class="text-center alert bg-success col-md-offset-4 col-md-4" role="alert"><span>Hecho! Post actualizado</span></div>';
 				echo '<script>setTimeout(function () { window.location.href = "blog-home.php";}, 1000);</script>';
 			}
 			else
 			{
-				echo '<div class="text-center alert bg-danger col-md-offset-4 col-md-4" role="alert"><span>Error, post updating failed, try again</span></div>';
+				echo '<div class="text-center alert bg-danger col-md-offset-4 col-md-4" role="alert"><span>Error, la actualización del post falló. Inténtalo de nuevo.</span></div>';
 				
 			}
 	}
@@ -1286,12 +1286,12 @@ function delete_post($post_id)
 		$rows = mysqli_affected_rows($con);
 		if($rows == 1)
 		{
-			echo '<div class="text-center alert bg-success col-md-offset-4 col-md-4" role="alert"><span>Success! Post Deleted</span></div>';
+			echo '<div class="text-center alert bg-success col-md-offset-4 col-md-4" role="alert"><span>Hecho! Post eliminado</span></div>';
 				echo '<script>setTimeout(function () { window.location.href = "blog-home.php";}, 1000);</script>';
 		}
 		else
 		{
-			echo '<div class="text-center alert bg-danger col-md-offset-4 col-md-4" role="alert"><span>Error, post updating failed, try again</span></div>';
+			echo '<div class="text-center alert bg-danger col-md-offset-4 col-md-4" role="alert"><span>Error, la actualización de la publicación falló. Inténtalo de nuevo.</span></div>';
 		}
 	}
 	return false;
@@ -1325,10 +1325,10 @@ function show_home_posts()
 				<a href="viewpost.php?id=<?php echo $row['id']; ?>&title=<?php echo $row['postTitle']; ?>" style="color: #fff;">
 				<h3 style="color: #fff;"><?php echo $row['postTitle']; ?></h3>
 				<a href="viewpost.php?id=<?php echo $row['id']; ?>&title=<?php echo $row['postTitle']; ?>" style="color: #fff;">
-				<p>Posted by <b><?php echo $row['auther']; ?></b> on <b><?php echo date('jS M Y H:i:s', strtotime($row['post_date'])); ?></b> in 
-				<b><a style="color: #fff;" href="viewbycat.php?cat=<?php echo $row['catinfo']; ?>"><?php echo $row['catinfo']; ?></a></b></p>
+				<p>Publicado por <b><?php echo $row['auther']; ?></b> El <b><?php echo date('jS M Y H:i:s', strtotime($row['post_date'])); ?></b> en
+				<b><a style="color: #fff;" href="buscador.php?cat=<?php echo $row['catinfo']; ?>"><?php echo $row['catinfo']; ?></a></b></p>
 			    
-			    <p><a style="color: #fff;" href="viewbycat.php?cat=<?php echo $row['catinfo']; ?>"><?php echo $row['description']; ?></a></p>
+			    <p><a style="color: #fff;" href="buscador.php?cat=<?php echo $row['catinfo']; ?>"><?php echo $row['description']; ?></a></p>
 			    </a>
 			    </a>
 			    </div>               
@@ -1341,7 +1341,7 @@ function show_home_posts()
 	} // Post list if closed.
 	else
 	{
-		echo '<div class="alert bg-warning text-center col-md-offset-4 col-md-4 col-sm-12"><span><h4>no posts found, visit after sometime!</h4></span></div>';
+		echo '<div class="alert bg-warning text-center col-md-offset-4 col-md-4 col-sm-12"><span><h4>No hay publicaciones, Visitanos mas tarde de nuevo</h4></span></div>';
 	}
 
 	return false;

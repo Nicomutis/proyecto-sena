@@ -55,7 +55,7 @@
 		<div class="col-lg-12">
 			<h1 class="page-header"><?php echo $postTitle; ?></h1>
 			<p>Publicado por <b><?php echo $auther; ?></b> el <b><?php echo $postDate; ?></b> en 
-			<a href="viewbycat.php?cat=<?php echo $catinfo; ?>"><?php echo $catinfo; ?></a>
+			<a href="buscador.php?cat=<?php echo $catinfo; ?>"><?php echo $catinfo; ?></a>
 		</div>
 	</div><!--/.row-->
 

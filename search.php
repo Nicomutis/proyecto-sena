@@ -67,9 +67,9 @@
 				<h3 style="color: #fff;"><?php echo $row['postTitle']; ?></h3>
 				<a href="viewpost.php?id=<?php echo $row['id']; ?>&title=<?php echo $row['postTitle']; ?>" style="color: #fff;">
 				<p>Publicado por <b><?php echo $row['auther']; ?></b> el <b><?php echo date('jS M Y H:i:s', strtotime($row['post_date'])); ?></b> en 
-				<b><a style="color: #fff;" href="viewbycat.php?cat=<?php echo $row['catinfo']; ?>"><?php echo $row['catinfo']; ?></a></b></p> 
+				<b><a style="color: #fff;" href="buscador.php?cat=<?php echo $row['catinfo']; ?>"><?php echo $row['catinfo']; ?></a></b></p> 
 			    
-			    <p><a style="color: #fff;" href="viewbycat.php?cat=<?php echo $row['catinfo']; ?>"><?php echo $row['description']; ?></a></p>
+			    <p><a style="color: #fff;" href="buscador.php?cat=<?php echo $row['catinfo']; ?>"><?php echo $row['description']; ?></a></p>
 			    </a>
 			    </a>
 			    </div>               

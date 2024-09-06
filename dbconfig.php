@@ -8,7 +8,7 @@
 	
 	$password = ''; 			// Contraseña
 	
-	$dbname = 'db'; 			// Nombre base de datos
+	$dbname = 'sync_blog'; 			// Nombre base de datos
 			
 	$con = new mysqli($hostname,$user,$password,$dbname);
 	if (mysqli_connect_errno())

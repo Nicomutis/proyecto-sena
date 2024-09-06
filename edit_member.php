@@ -30,7 +30,7 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="home.php"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-				<li><a href="manage_members.php">Miembros</a></li> 
+				<li><a href="gestion_miembros.php">Miembros</a></li> 
 				<li class="active">Editar Miembro</li> 
 			</ol>
 		</div><!--/.row-->
@@ -89,7 +89,7 @@
 				} ?>
 				<button class="btn btn-primary" name="edit_member" type="submit" id="login">Editar</button> 
 				&nbsp;&nbsp;
-				<a href="manage_members.php" class="btn btn-default" id="login">Cancelar</a> 
+				<a href="gestion_miembros.php" class="btn btn-default" id="login">Cancelar</a> 
 			</form>
 		</div>
 	</div><!--/.row-->

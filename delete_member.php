@@ -30,7 +30,7 @@
 	<div class="row">
 		<ol class="breadcrumb">
 			<li><a href="home.php"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-			<li><a href="manage_members.php">Miembros</a></li> 
+			<li><a href="gestion_miembros.php">Miembros</a></li> 
 			<li class="active">Eliminar Miembro</li> 
 		</ol>
 	</div><!--/.row-->
@@ -58,7 +58,7 @@
 							<div class="pull-right">
 								<button class="btn btn-danger" name="yes" type="submit" id="login">Sí</button> 
 								&nbsp;&nbsp;
-								<a href="manage_members.php" class="btn btn-default" id="login">No, volver</a> 
+								<a href="gestion_miembros.php" class="btn btn-default" id="login">No, volver</a> 
 							</div>
 						</div>
 					</form>

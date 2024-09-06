@@ -30,7 +30,7 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="home.php"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-				<li><a href="attendance.php">Asistencia</a></li> 
+				<li><a href="asistencia.php">Asistencia</a></li> 
 				<li class="active">Gestionar Asistencia</li> 
 			</ol>
 		</div><!--/.row-->
