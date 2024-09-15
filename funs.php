@@ -1025,7 +1025,7 @@ function update_settings($id)
  <head>
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>Club Manager - Dashboard</title>
+ <title>Sync circle</title>
  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
  <link href="css/pace-theme-corner-indicator.css" rel="stylesheet"> <!-- Estilo para la carga de la página. -->
  <script src="js/pace.min.js"></script> <!-- Script para la carga de la página. -->
